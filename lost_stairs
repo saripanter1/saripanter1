@@ -1,0 +1,20 @@
+local button = script.Parent
+local bridge = workspace.Bridge 
+
+local function buttonPressed()
+	-- Rengi yeşil olarak değiştirin
+	button.BrickColor = BrickColor.Green() 
+	-- Şeffaflığı kaldırın
+	bridge.Transparency = 0
+	-- Köprüyü geçelim
+	bridge.CanCollide = true
+	-- 8 saniye bekleyin ( zamanı kendiniz ayarlayabilirsiniz ) bekleyin 
+	wait(8)
+	-- Her şeyi ters sırada yapın
+	button.BrickColor = BrickColor.Red()
+	bridge.Transparency = 0.5
+	bridge.CanCollide = false
+end
+
+-- Düğmeye dokunduğumuzda fonksiyon devreye giriyor
+button.Touched:Connect(buttonPressed)
