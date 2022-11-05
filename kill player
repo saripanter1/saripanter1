@@ -1,0 +1,12 @@
+local lava = script.Parent
+local function killPlayer(Player)
+	-- Getting information about a character
+	local humanoid = Player.Parent:FindFirstChild("Humanoid")
+	-- Check that it was the character who touched the object
+	\tif humanoid then
+	-- Zeroing your character's health
+	\t\thumanoid.Health = 0
+	\tend
+end
+
+lava.Touched:Connect(killPlayer)
